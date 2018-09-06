@@ -31,11 +31,9 @@ void Solution::nextPermutation(vector<int> &A) {
             if (A[j] > A[i_max - 1])
                 j_max = j;
 
-        if (i_max > 0) {
-            int tmp = A[j_max];
-            A[j_max] = A[i_max - 1];
-            A[i_max - 1] = tmp;
-        }
+        int tmp = A[j_max];
+        A[j_max] = A[i_max - 1];
+        A[i_max - 1] = tmp;
     }
 
     reverse (A.begin() + i_max, A.end());
